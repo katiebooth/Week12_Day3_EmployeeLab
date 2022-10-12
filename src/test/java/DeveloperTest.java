@@ -29,12 +29,23 @@ public class DeveloperTest {
     }
 
     @Test
-    public void canRaiseSalary(){
+    public void canRaiseSalaryIfRaiseIsPositive(){
         assertEquals(41000, developer.raiseSalary(1000), 0.0);
+    }
+
+    @Test
+    public void cannotApplyNegativeSalaryRaise(){
+        assertEquals(40000, developer.raiseSalary(-1000), 0.0);
     }
 
     @Test
     public void canPayBonus(){
         assertEquals(400, developer.payBonus(), 0.0);
+    }
+
+    @Test
+    public void canChangeEmployeeName(){
+        developer.setName("Joseph");
+        assertEquals("Joseph",developer.getName());
     }
 }
